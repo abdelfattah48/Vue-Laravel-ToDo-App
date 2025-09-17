@@ -65,7 +65,7 @@ Assurez-vous que le dossier vendor/ est présent après composer install.
 cd frontend
 
 frontend/src/echo.js
- key: "8f4158exxxxxxxxxxxxx", modifier cette ligne avec votre publik key 
+ key: "8f4158exxxxxxxxxxxxx", modifier cette ligne avec votre public key 
 
 npm install
 npm run dev
