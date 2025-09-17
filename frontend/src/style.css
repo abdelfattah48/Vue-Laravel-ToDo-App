@@ -1,0 +1,499 @@
+body {
+  font-family: "Segoe UI", Tahoma, sans-serif;
+  background: #f4f6f8;
+  margin: 0;
+  padding: 0;
+}
+.auth-buttons {
+  display: flex;
+  justify-content: flex-end;
+  gap: 12px;
+  padding: 15px 25px;
+  border-bottom: 1px solid #ddd;
+  box-shadow: 0 2px 4px rgba(0,0,0,0.05);
+}
+
+.auth-buttons button {
+  padding: 8px 16px;
+  border-radius: 6px;
+  border: none;
+  background: #D4AF37;
+  color: white;
+  cursor: pointer;
+  font-weight: 500;
+  transition: background 0.2s ease;
+}
+.auth-buttons button:hover {
+  background: #b99b38;
+}
+.page-title {
+  text-align: center;
+  margin-bottom: 20px;
+  color: #333;
+}
+.add-btn {
+  background: #000000c7;
+  color: white;
+  border: none;
+  padding: 10px 18px;
+  border-radius: 6px;
+  cursor: pointer;
+  margin-bottom: 20px;
+  font-weight: 600;
+  transition: background 0.2s ease;
+}
+.add-btn:hover {
+  background: #1f201fff;
+}
+.task-list {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+.task-item {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+  background: white;
+  margin-bottom: 15px;
+  padding: 18px 20px;
+  border-radius: 10px;
+  box-shadow: 0 2px 8px rgba(0,0,0,0.08);
+  transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+.task-item:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 4px 12px rgba(0,0,0,0.12);
+}
+.task-info strong {
+  font-size: 16px;
+  color: #333;
+}
+.task-info small {
+  font-size: 14px;
+  color: #777;
+}
+.menu-btn {
+  background: none;
+  color: #555;
+  border: none;
+  font-size: 22px;
+  cursor: pointer;
+  padding: 4px 8px;
+}
+.action-menu {
+  position: relative;
+}
+
+.dropdown {
+  position: absolute;
+  top: 30px;
+  right: 0;
+  color: #333;
+  background: black;
+  border: 1px solid #ddd;
+  border-radius: 8px;
+  display: flex;
+  flex-direction: column;
+  box-shadow: 0 4px 10px rgba(0,0,0,0.15);
+  min-width: 120px;
+  overflow: hidden;
+}
+.dropdown button {
+  padding: 10px 14px;
+  border: none;
+  background: none;
+  text-align: left;
+  font-size: 14px;
+  cursor: pointer;
+  transition: background 0.2s ease;
+}
+.delete-btn {
+  background-color: red;
+  color: white;
+  font-weight: 500;
+}
+form div {
+  margin-bottom: 15px;
+}
+
+
+/* ===== Modal ===== */
+.modal-overlay {
+  position: fixed;
+  inset: 0;
+  background: rgba(0,0,0,0.5);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.modal {
+  background: white;
+  padding: 25px;
+  border-radius: 12px;
+  width: 420px;
+  max-width: 95%;
+  box-shadow: 0 8px 18px rgba(0,0,0,0.2);
+  animation: fadeIn 0.3s ease;
+}
+.modal h2 {
+  margin-top: 0;
+  margin-bottom: 15px;
+  font-size: 20px;
+}
+.modal input,
+.modal textarea {
+  width: 100%;
+  padding: 10px;
+  margin: 8px 0;
+  border-radius: 8px;
+  border: 1px solid #ccc;
+}
+
+.modal-actions {
+  display: flex;
+  justify-content: flex-end;
+  gap: 10px;
+}
+.save-btn {
+  background: #D4AF37;
+  color: white;
+  border: none;
+  padding: 8px 16px;
+  border-radius: 6px;
+  cursor: pointer;
+  transition: background 0.2s ease;
+}
+.save-btn:hover {
+  background: #907c39ff;
+}
+.cancel-btn {
+  background: gray;
+  color: white;
+  border: none;
+  padding: 8px 16px;
+  border-radius: 6px;
+  cursor: pointer;
+  transition: background 0.2s ease;
+}
+.cancel-btn:hover {
+  background: #5c5a5aff;
+}
+.status-done {
+  color: #37d44c;
+  font-weight: bold;
+}
+.status-pending {
+  color: orange;
+  font-weight: bold;
+}
+
+/* ===== Animations ===== */
+@keyframes fadeIn {
+  from { opacity: 0; transform: scale(0.95); }
+  to { opacity: 1; transform: scale(1); }
+}
+
+input[type="text"],
+input[type="email"],
+input[type="password"] {
+  width: 100%;
+  padding: 10px 12px;
+  border-radius: 8px;
+  border: 1px solid #ccc;
+  outline: none;
+  transition: border 0.2s;
+}
+
+input[type="text"]:focus,
+input[type="email"]:focus,
+input[type="password"]:focus {
+  border-color: #D4AF37;
+}
+
+button {
+  padding: 10px;
+  background: #D4AF37;
+  color: white;
+  font-weight: bold;
+  border: none;
+  border-radius: 8px;
+  cursor: pointer;
+  transition: background 0.2s;
+}
+
+
+
+ul {
+  list-style: none;
+  padding: 0;
+}
+
+li {
+  padding: 10px;
+  margin-bottom: 10px;
+  border-radius: 8px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+a {
+  color: #D4AF37;
+  text-decoration: none;
+}
+
+a:hover {
+  text-decoration: underline;
+}
+
+.error {
+  color: red;
+  font-size: 0.9rem;
+  text-align: center;
+}
+
+.login-container {
+  min-height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background: #1a1a1a;
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+/* ===== Card ===== */
+.login-card {
+  background: #2b2b2b;
+  padding: 40px 30px;
+  border-radius: 12px;
+  width: 100%;
+  max-width: 400px;
+  box-shadow: 0 12px 25px rgba(0,0,0,0.6);
+  text-align: center;
+  border: 2px solid #D4AF37;
+}
+
+/* ===== Title ===== */
+.login-card .title {
+  margin-bottom: 25px;
+  font-size: 28px;
+  color: #D4AF37;
+}
+
+/* ===== Input Fields ===== */
+.input-group {
+  margin-bottom: 20px;
+}
+
+.input-group input {
+  width: 100%;
+  padding: 12px 15px;
+  border-radius: 8px;
+  border: 1px solid #555;
+  background: #1a1a1a;
+  color: #fff;
+  font-size: 16px;
+  transition: 0.3s;
+}
+
+.input-group input::placeholder {
+  color: #ccc;
+}
+
+.input-group input:focus {
+  outline: none;
+  border-color: #D4AF37;
+  box-shadow: 0 0 5px rgba(212,175,55,0.5);
+}
+
+/* ===== Buttons ===== */
+.login-btn {
+  width: 100%;
+  padding: 12px;
+  border: none;
+  border-radius: 8px;
+  background: #D4AF37;
+  color: #1a1a1a;
+  font-size: 16px;
+  cursor: pointer;
+  transition: 0.3s;
+  font-weight: bold;
+}
+
+.login-btn:hover {
+  background: #b8932b;
+}
+
+/* ===== Register Text ===== */
+.register-text {
+  margin-top: 15px;
+  font-size: 14px;
+  color: #ccc;
+}
+
+.register-text a {
+  color: #D4AF37;
+  text-decoration: none;
+  font-weight: bold;
+}
+
+.register-text a:hover {
+  text-decoration: underline;
+}
+
+/* ===== Error Message ===== */
+.error {
+  margin-top: 15px;
+  color: #ff4d4f;
+  font-weight: bold;
+  font-size: 14px;
+}
+
+/* ===== Responsive ===== */
+@media(max-width: 480px){
+  .login-card {
+    padding: 30px 20px;
+  }
+}
+
+
+
+
+.register-container {
+  min-height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background: #1a1a1a;
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  padding: 20px;
+}
+
+.register-card {
+  background: #2b2b2b;
+  padding: 50px 40px;
+  border-radius: 15px;
+  width: 100%;
+  max-width: 450px;
+  box-shadow: 0 12px 25px rgba(0,0,0,0.7);
+  text-align: center;
+}
+
+/* Title */
+.register-card .title {
+  margin-bottom: 30px;
+  font-size: 30px;
+  color: #D4AF37;
+  font-weight: bold;
+}
+
+/* Input fields */
+.input-group {
+  margin-bottom: 20px;
+}
+
+.input-group input {
+  width: 100%;
+  padding: 15px;
+  border-radius: 10px;
+  border: none;
+  background: #1a1a1a;
+  color: #fff;
+  font-size: 16px;
+  transition: 0.3s;
+}
+
+.input-group input::placeholder {
+  color: #ccc;
+}
+
+.input-group input:focus {
+  outline: none;
+  box-shadow: 0 0 6px rgba(212,175,55,0.5);
+}
+
+/* Buttons */
+.register-btn {
+  width: 100%;
+  padding: 15px;
+  border: none;
+  border-radius: 10px;
+  background: #D4AF37;
+  color: #1a1a1a;
+  font-size: 16px;
+  font-weight: bold;
+  cursor: pointer;
+  transition: 0.3s;
+}
+
+.register-btn:hover {
+  background: #b8932b;
+}
+
+/* Login link */
+.login-text {
+  margin-top: 20px;
+  font-size: 14px;
+  color: #ccc;
+}
+
+.login-text a {
+  color: #D4AF37;
+  font-weight: bold;
+  text-decoration: none;
+}
+
+.login-text a:hover {
+  text-decoration: underline;
+}
+
+/* Error */
+.error {
+  margin-top: 15px;
+  color: #ff4d4f;
+  font-weight: bold;
+  font-size: 14px;
+}
+
+/* Responsive */
+@media(max-width: 480px){
+  .register-card {
+    padding: 40px 25px;
+  }
+}
+.file-name {
+  color: #ccc;
+  font-size: 14px;
+  margin-top: 5px;
+}
+
+/* ===== Global Layout ===== */
+
+
+.container {
+  width: 100%; /* full width */
+  padding: 30px 50px;
+  box-sizing: border-box;
+}
+
+.bell-btn {
+  font-size: 22px;
+  display: inline-flex;
+  justify-content: center;
+  align-items: center;
+}
+
+/* Animation */
+.bell-btn {
+  animation: ring 0.6s ease-in-out infinite;
+}
+
+@keyframes ring {
+  0% { transform: rotate(0); }
+  20% { transform: rotate(15deg); }
+  40% { transform: rotate(-15deg); }
+  60% { transform: rotate(10deg); }
+  80% { transform: rotate(-10deg); }
+  100% { transform: rotate(0); }
+}
