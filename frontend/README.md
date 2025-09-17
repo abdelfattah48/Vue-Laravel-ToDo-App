@@ -1,5 +1,28 @@
-# Vue 3 + Vite
 
-This template should help get you started developing with Vue 3 in Vite. The template uses Vue 3 `<script setup>` SFCs, check out the [script setup docs](https://v3.vuejs.org/api/sfc-script-setup.html#sfc-script-setup) to learn more.
+### Configuration du Frontend (Vue.js)
+cd frontend
 
-Learn more about IDE Support for Vue in the [Vue Docs Scaling up Guide](https://vuejs.org/guide/scaling-up/tooling.html#ide-support).
+frontend/src/echo.js
+
+key: "8f4158exxxxxxxxxxxxx", modifier cette ligne avec votre public key 
+
+npm install
+
+npm run dev
+
+
+Par défaut, le serveur de développement Vue.js s’exécute sur le port 5173.
+Si ce port est déjà utilisé, modifiez-le dans vite.config.js.
+
+### Fonctionnalités
+
+Inscription / Connexion avec JWT
+
+CRUD des tâches (chaque utilisateur ne voit que ses tâches)
+
+Notifications en temps réel après création de tâche
+
+
+
+
+👨‍💻 Développé par Abdelfattah Bekkal
