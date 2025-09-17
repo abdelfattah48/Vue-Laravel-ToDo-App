@@ -47,17 +47,20 @@ Créer une nouvelle application "Channels" nommée "tasks"  dans cluster selecti
 Récupérer vos identifiants (App ID, Key, Secret, Cluster) et les ajouter dans .env :
 
 PUSHER_APP_ID=your_app_id
+
 PUSHER_APP_KEY=your_key
+
 PUSHER_APP_SECRET=your_secret
+
 PUSHER_APP_CLUSTER=mt1
 
 BROADCAST_DRIVER=pusher
+
 QUEUE_CONNECTION=sync
 
 
 ### Lancer le serveur Laravel
 php artisan serve
-
 
 Assurez-vous que le dossier vendor/ est présent après composer install.
 
@@ -65,9 +68,11 @@ Assurez-vous que le dossier vendor/ est présent après composer install.
 cd frontend
 
 frontend/src/echo.js
- key: "8f4158exxxxxxxxxxxxx", modifier cette ligne avec votre public key 
+
+key: "8f4158exxxxxxxxxxxxx", modifier cette ligne avec votre public key 
 
 npm install
+
 npm run dev
 
 
